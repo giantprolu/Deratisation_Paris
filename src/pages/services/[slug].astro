@@ -1,0 +1,174 @@
+---
+import { services } from '../../data/services';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ContactSidebar from '../../components/ContactSidebar';
+import InterventionProcess from '../../components/InterventionProcess.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
+
+export function getStaticPaths() {
+  return services.map(service => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const IconComponent = service.icon;
+---
+
+<Layout
+  title={`${service.title} ${service.slug === 'deratisation' ? 'Paris & Bondy' : 'Professionnel'} | Hygiène Protect 3D`}
+  description={service.metaDescription}
+  keywords={`${service.slug}, ${service.title.toLowerCase()}, professionnel Bondy, Île-de-France, intervention rapide`}
+  canonical={`/services/${service.slug}`}
+>
+  <div class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <div class="bg-gradient-to-br from-primary-50 to-blue-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <a 
+            href="/services" 
+            class="inline-flex items-center text-primary-600 hover:text-primary-dark mb-6 transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Retour aux services
+          </a>
+          
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+              <IconComponent className="h-8 w-8 text-primary-600" />
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">{service.title}</h1>
+          </div>
+          
+          <p class="text-xl text-gray-600 max-w-4xl">{service.description}</p>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            <!-- Left Column - Main Content -->
+            <div class="lg:col-span-3">
+              <!-- Image principale -->
+              <div class="mb-12 flex justify-start">
+                <img
+                  src={service.image}
+                  alt={service.imageAlt || service.title}
+                  title={service.imageTitle || service.title}
+                  class="rounded-2xl shadow-xl w-full max-w-4xl h-auto object-cover"
+                />
+              </div>
+
+              <!-- Description complète -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Notre service professionnel
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed whitespace-pre-line text-left">
+                  {service.fullDescription}
+                </p>
+              </div>
+
+              <!-- Caractéristiques -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Ce que nous faisons
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.features.map((feature, index) => (
+                    <div key={index} class="flex items-start gap-3 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow">
+                      <CheckCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <span class="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Avantages -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Pourquoi nous choisir
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.benefits.map((benefit, index) => (
+                    <div key={index} class="flex items-start bg-blue-50 p-4 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
+                      <span class="text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Équipements -->
+              {service.equipments && service.equipments.length > 0 && (
+                <div class="mb-12">
+                  <h2 class="text-3xl font-bold text-gray-900 mb-8 text-left">
+                    Nos équipements professionnels
+                  </h2>
+                  <div class="space-y-8">
+                    {service.equipments.map((equipment, index) => (
+                      <div key={index} class="bg-gradient-to-br from-blue-50 to-primary-50 rounded-2xl p-8 border border-primary-100">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                          <div class="md:col-span-1">
+                            <img
+                              src={equipment.image}
+                              alt={equipment.imageAlt || equipment.name}
+                              title={equipment.imageTitle || equipment.name}
+                              class="rounded-xl shadow-lg w-full h-auto max-h-80 object-contain bg-white"
+                            />
+                          </div>
+                          <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">{equipment.name}</h3>
+                            <p class="text-gray-700 leading-relaxed">{equipment.description}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <!-- Right Column - Sidebar -->
+            <div class="lg:col-span-1">
+              <div class="sticky top-24 space-y-6">
+                <ContactSidebar client:load />
+
+                <!-- Autres services -->
+                <div class="bg-blue-50 p-6 rounded-2xl">
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">Autres services</h3>
+                  <ul class="space-y-2">
+                    {services
+                      .filter(s => s.id !== service.id)
+                      .slice(0, 4)
+                      .map(otherService => (
+                        <li key={otherService.id}>
+                          <a
+                            href={`/services/${otherService.slug}`}
+                            class="text-primary-600 hover:text-primary-dark hover:underline transition-colors"
+                          >
+                            {otherService.title}
+                          </a>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Processus d'Intervention - Composant Global -->
+      <InterventionProcess />
+    </main>
+    <Footer />
+  </div>
+</Layout>

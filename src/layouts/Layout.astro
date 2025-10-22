@@ -1,0 +1,159 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  ogType?: string;
+}
+
+const {
+  title = 'Hygiène Protect 3D - Dératisation Bondy & Île-de-France',
+  description = 'Expert en dératisation, désinsectisation et désinfection à Bondy et en Île-de-France. Intervention rapide 7j/7. Devis gratuit ☎ 07 67 39 38 85',
+  keywords = 'dératisation Bondy, désinsectisation Île-de-France, extermination nuisibles 93, désinfection professionnelle',
+  canonical = '/',
+  ogType = 'website'
+} = Astro.props;
+
+const siteUrl = 'https://hygiene-protect-3d.fr';
+const fullUrl = `${siteUrl}${canonical}`;
+const fullTitle = title.includes('Hygiène Protect 3D') ? title : `${title} | Hygiène Protect 3D`;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <link rel="canonical" href={fullUrl} />
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="FR-93" />
+    <meta name="geo.placename" content="Bondy" />
+    <meta name="theme-color" content="#10b981" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}/images/og-image.jpg`} />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Hygiène Protect 3D" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={fullUrl} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/images/og-image.jpg`} />
+    
+    <!-- Favicon et PWA -->
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
+    <link rel="apple-touch-icon" href="/images/logo.webp" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preload des ressources critiques -->
+    <link rel="preload" href="/fonts/main-font.woff2" as="font" type="font/woff2" crossorigin />
+    
+    <!-- DNS Prefetch pour les performances -->
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    
+    <!-- Core Web Vitals optimizations -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    
+    <!-- Google Analytics - Remplacez par votre ID -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
+    
+    <!-- Google Business Profile / Google My Business -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Hygiène Protect 3D",
+        "alternateName": ["Dératisation Bondy", "Désinsectisation Île-de-France"],
+        "description": "Expert en dératisation, désinsectisation et désinfection à Bondy et en Île-de-France",
+        "image": ["https://hygiene-protect-3d.fr/images/logo.webp"],
+        "telephone": "+33767393885",
+        "email": "contact@hygiene-protect-3d.fr",
+        "url": "https://hygiene-protect-3d.fr",
+        "priceRange": "€€",
+        "paymentAccepted": ["Cash", "Credit Card", "Invoice"],
+        "currenciesAccepted": "EUR",
+        "serviceType": ["Pest Control", "Disinfection", "Hygiene Services"],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.9022,
+            "longitude": 2.4833
+          },
+          "geoRadius": "50000"
+        }
+      }
+    </script>
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json" is:inline>
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Hygiène Protect 3D",
+        "image": "https://hygiene-protect-3d.fr/images/logo.webp",
+        "description": "Expert en dératisation, désinsectisation et désinfection à Bondy et en Île-de-France",
+        "telephone": "+33767393885",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bondy",
+          "addressLocality": "Bondy",
+          "postalCode": "93140",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 48.9022,
+          "longitude": 2.4833
+        },
+        "url": "https://hygiene-protect-3d.fr",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "priceRange": "€€",
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.9022,
+            "longitude": 2.4833
+          },
+          "geoRadius": "50000"
+        },
+        "serviceType": ["Dératisation", "Désinsectisation", "Désinfection"]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

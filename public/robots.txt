@@ -1,0 +1,24 @@
+# Hygiène Protect 3D - Robots.txt
+# Dératisation Bondy & Île-de-France
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hygiene-protect-3d.fr/sitemap-index.xml
+Sitemap: https://hygiene-protect-3d.fr/sitemap-0.xml
+
+# Interdire l'indexation des fichiers techniques
+Disallow: /src/
+Disallow: /*.json
+Disallow: /*.config.*
+
+# Autoriser les moteurs de recherche principaux
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

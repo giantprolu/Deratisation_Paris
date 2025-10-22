@@ -1,0 +1,81 @@
+---
+import { ArrowRight, Shield, Leaf, Clock } from 'lucide-react';
+---
+
+<div id="home" class="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-blue-50 pt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="text-left">
+        <div class="badge badge-primary mb-6">
+          <Leaf className="icon-sm" />
+          Solutions écoresponsables
+        </div>
+        <h1 class="heading-1 mb-6">
+          Hygiène Protect 3D
+        </h1>
+        <p class="text-description mb-8">
+          Votre partenaire de confiance pour des solutions professionnelles de dératisation, désinsectisation et désinfection en Île-de-France.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+          <a href="/contact" class="btn-primary">
+            Demander un devis gratuit
+            <ArrowRight className="icon-md" />
+          </a>
+          <a href="/services" class="btn-secondary">
+            Découvrir nos services
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="list-item-icon-start-lg">
+            <div class="icon-box icon-primary flex-shrink-0">
+              <Shield className="icon-lg text-primary-600" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Certifiés</div>
+              <div class="text-label">Experts qualifiés</div>
+            </div>
+          </div>
+          <div class="list-item-icon-start-lg">
+            <div class="icon-box icon-primary flex-shrink-0">
+              <Leaf className="icon-lg text-primary-600" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Écologique</div>
+              <div class="text-label">Produits respectueux</div>
+            </div>
+          </div>
+          <div class="list-item-icon-start-lg">
+            <div class="icon-box icon-primary flex-shrink-0">
+              <Clock className="icon-lg text-primary-600" />
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Disponibles</div>
+              <div class="text-label">24h/24 & 7j/7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative hidden lg:block">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <img
+            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+            alt="Professionnel de la désinfection"
+            class="w-full h-[600px] object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-6 max-w-xs">
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+              15+
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Années d'expérience</div>
+              <div class="text-sm text-gray-600">À votre service</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

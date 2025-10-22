@@ -1,0 +1,76 @@
+/* ===================================
+   ICONS - Styles réutilisables
+   =================================== */
+
+/* Conteneur d'icône de base */
+.icon-container {
+  @apply flex items-center justify-center flex-shrink-0;
+}
+
+/* Icône avec background */
+.icon-box {
+  @apply w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center;
+}
+
+.icon-box-md {
+  @apply w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center;
+}
+
+.icon-box-lg {
+  @apply w-16 h-16 rounded-xl flex items-center justify-center;
+}
+
+/* Icône circulaire */
+.icon-circle {
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+}
+
+.icon-circle-lg {
+  @apply w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center;
+}
+
+/* Icône avec background primaire */
+.icon-primary {
+  @apply bg-primary-100 text-primary-600;
+}
+
+/* Icône animée au hover */
+.icon-animated {
+  @apply transition-all duration-500 shadow-md;
+}
+
+/* Icône dans une card */
+.icon-card {
+  @apply w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl flex items-center justify-center shadow-md transition-all duration-500;
+}
+
+/* Icône avec effet glassmorphism */
+.icon-glass {
+  @apply bg-white/20 backdrop-blur-sm rounded-full;
+}
+
+/* Tailles d'icône */
+.icon-sm {
+  @apply h-4 w-4;
+}
+
+.icon-md {
+  @apply h-5 w-5;
+}
+
+.icon-lg {
+  @apply h-7 w-7 sm:h-8 sm:w-8;
+}
+
+.icon-xl {
+  @apply h-8 w-8;
+}
+
+/* Icône de checkmark */
+.icon-check {
+  @apply h-5 w-5 text-primary-600 flex-shrink-0;
+}
+
+.icon-check-sm {
+  @apply h-4 w-4 text-primary-600 flex-shrink-0 mt-0.5;
+}

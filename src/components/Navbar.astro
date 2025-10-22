@@ -1,0 +1,28 @@
+---
+import { PhoneCall } from 'lucide-react';
+import NavbarMobile from './NavbarMobile';
+---
+
+<nav class="bg-white shadow-sm sticky top-0 w-full z-50 border-b border-gray-100" aria-label="Main Navigation">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-20">
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-primary-600">Hygiène Protect 3D</a>
+      </div>
+
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Accueil">Accueil</a>
+        <a href="/services" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Services">Services</a>
+        <a href="/contact" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Contact">Contact</a>
+        <a href="tel:0767393885" class="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-dark text-white rounded-lg transition-colors font-medium" aria-label="Phone Number">
+          <PhoneCall className="w-4 h-4" />
+          <span>07 67 39 38 85</span>
+        </a>
+      </div>
+
+      <div class="md:hidden flex items-center">
+        <NavbarMobile client:load />
+      </div>
+    </div>
+  </div>
+</nav>

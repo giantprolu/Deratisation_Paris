@@ -1,0 +1,54 @@
+/* ===================================
+   GRIDS - Styles réutilisables
+   =================================== */
+
+/* Grille responsive pour services */
+.grid-services {
+  @apply grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8;
+}
+
+/* Grille responsive pour processus (5 colonnes) */
+.grid-process {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6;
+}
+
+/* Grille 2 colonnes */
+.grid-2-cols {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.grid-2-cols-lg {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+}
+
+/* Grille 3 colonnes */
+.grid-3-cols {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+/* Grille 4 colonnes (avec sidebar) */
+.grid-with-sidebar {
+  @apply grid grid-cols-1 lg:grid-cols-4 gap-12;
+}
+
+.grid-main-content {
+  @apply lg:col-span-3 space-y-16;
+}
+
+.grid-sidebar {
+  @apply hidden lg:block lg:col-span-1;
+}
+
+/* Grille pour features/benefits */
+.grid-features {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+/* Gap responsive */
+.gap-responsive {
+  @apply gap-6 sm:gap-8;
+}
+
+.gap-responsive-sm {
+  @apply gap-4 sm:gap-6;
+}

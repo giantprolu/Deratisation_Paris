@@ -1,0 +1,46 @@
+/* ===================================
+   BADGES - Styles réutilisables
+   =================================== */
+
+/* Badge de base */
+.badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium;
+}
+
+/* Badge primaire */
+.badge-primary {
+  @apply bg-primary-100 text-primary-600;
+}
+
+/* Badge avec gradient */
+.badge-gradient {
+  @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-lg;
+}
+
+/* Badge outline */
+.badge-outline {
+  @apply border-2 border-primary-600 text-primary-600 bg-transparent;
+}
+
+/* Badge avec glassmorphism */
+.badge-glass {
+  @apply bg-white/20 backdrop-blur-sm text-white border border-white/20;
+}
+
+/* Badge avec ombre */
+.badge-shadow {
+  @apply shadow-md hover:shadow-lg transition-shadow duration-300;
+}
+
+/* Tailles de badge */
+.badge-sm {
+  @apply px-3 py-1.5 text-xs;
+}
+
+.badge-md {
+  @apply px-4 py-2 text-sm;
+}
+
+.badge-lg {
+  @apply px-5 py-2.5 text-base;
+}

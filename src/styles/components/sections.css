@@ -1,0 +1,62 @@
+/* ===================================
+   SECTIONS - Styles réutilisables
+   =================================== */
+
+/* Section de base */
+.section {
+  @apply py-12 sm:py-16 lg:py-20;
+}
+
+/* Section avec background gradient */
+.section-gradient-primary {
+  @apply bg-gradient-to-b from-blue-50 to-white;
+}
+
+.section-gradient-complex {
+  @apply bg-gradient-to-br from-primary-50 via-blue-50 to-white relative overflow-hidden;
+}
+
+/* Container de section */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-container-relative {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10;
+}
+
+/* Header de section */
+.section-header {
+  @apply text-center mb-12 sm:mb-16;
+}
+
+/* Titre de section */
+.section-title {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4;
+}
+
+.section-title-md {
+  @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4;
+}
+
+/* Sous-titre de section */
+.section-subtitle {
+  @apply text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4;
+}
+
+/* Éléments décoratifs de background */
+.bg-decoration-blur {
+  @apply absolute w-96 h-96 rounded-full blur-3xl;
+}
+
+.bg-decoration-top-left {
+  @apply absolute top-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2;
+}
+
+.bg-decoration-bottom-right {
+  @apply absolute bottom-0 right-0 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2;
+}
+
+.bg-decoration-card {
+  @apply absolute top-0 right-0 w-32 h-32 bg-primary-200/20 rounded-full blur-3xl transition-all duration-500;
+}

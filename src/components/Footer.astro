@@ -1,0 +1,85 @@
+---
+import { PhoneCall, Mail, MapPin, Leaf } from 'lucide-react';
+---
+
+<footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <h3 class="text-2xl font-bold text-primary-light">Hygiène Protect 3D</h3>
+        </div>
+        <p class="text-gray-300 leading-relaxed mb-4">
+          Services professionnels de dératisation, désinsectisation et désinfection écoresponsables pour les entreprises et particuliers.
+        </p>
+        <div class="flex items-center gap-2 text-primary-light">
+          <Leaf class="w-5 h-5" />
+          <span class="text-sm">Solutions écologiques</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Liens Rapides</h4>
+        <ul class="space-y-3">
+          <li><a href="/" class="text-gray-300 hover:text-primary-light transition-colors">Accueil</a></li>
+          <li><a href="/#about" class="text-gray-300 hover:text-primary-light transition-colors">À Propos</a></li>
+          <li><a href="/services" class="text-gray-300 hover:text-primary-light transition-colors">Services</a></li>
+          <li><a href="/contact" class="text-gray-300 hover:text-primary-light transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Nos Services</h4>
+        <ul class="space-y-3">
+          <li><a href="/services/deratisation" class="text-gray-300 hover:text-primary-light transition-colors">Dératisation</a></li>
+          <li><a href="/services/desinsectisation" class="text-gray-300 hover:text-primary-light transition-colors">Désinsectisation</a></li>
+          <li><a href="/services/desinfection" class="text-gray-300 hover:text-primary-light transition-colors">Désinfection</a></li>
+          <li><a href="/services/depigeonnage" class="text-gray-300 hover:text-primary-light transition-colors">Dépigeonnage</a></li>
+          <li><a href="/services/hygiene-du-batiment" class="text-gray-300 hover:text-primary-light transition-colors">Hygiène du Bâtiment</a></li>
+          <li><a href="/services/debarras-pro" class="text-gray-300 hover:text-primary-light transition-colors">Débarras Pro</a></li>
+          <li><a href="/services/assainissement-vmc" class="text-gray-300 hover:text-primary-light transition-colors">Assainissement</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Contact</h4>
+        <div class="space-y-4">
+          <a href="tel:0767393885" class="flex items-start gap-3 text-gray-300 hover:text-primary-light transition-colors group">
+            <PhoneCall class="h-5 w-5 mt-1 flex-shrink-0" />
+            <div>
+              <div>07 67 39 38 85</div>
+              <div class="text-sm text-gray-400">24h/24 & 7j/7</div>
+            </div>
+          </a>
+          <a href="mailto:hygieneprotect3d@hotmail.com" class="flex items-start gap-3 text-gray-300 hover:text-primary-light transition-colors group">
+            <Mail class="h-5 w-5 mt-1 flex-shrink-0" />
+            <div class="break-all">hygieneprotect3d@hotmail.com</div>
+          </a>
+          <div class="flex items-start gap-3 text-gray-300">
+            <MapPin class="h-5 w-5 mt-1 flex-shrink-0" />
+            <div>
+              <div>Bondy, 93140</div>
+              <div class="text-sm text-gray-400">Île-de-France</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-400 text-sm">
+          © 2024 HygièneProtect3D. Tous droits réservés.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="/politique-de-confidentialite" class="text-gray-400 hover:text-primary-light transition-colors text-sm">
+            Politique de confidentialité
+          </a>
+          <a href="/mentions-legales" class="text-gray-400 hover:text-primary-light transition-colors text-sm">
+            Mentions Légales
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

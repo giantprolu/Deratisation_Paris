@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Contact from '../components/Contact';
+---
+
+<Layout
+  title="Contact - Devis Gratuit Dératisation Bondy"
+  description="Contactez Hygiène Protect 3D pour un devis gratuit de dératisation, désinsectisation à Bondy et Île-de-France. Intervention rapide ☎ 07 67 39 38 85 | Ouvert 8h-18h"
+  canonical="/contact"
+  keywords="devis dératisation gratuit, contact désinsectisation, urgence nuisibles, dératiseur Bondy, intervention rapide"
+>
+  <div class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <Contact client:load />
+    </main>
+    <Footer />
+  </div>
+</Layout>

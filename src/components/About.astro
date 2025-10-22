@@ -1,0 +1,195 @@
+---
+import { CheckCircle, MapPin, Award, Users } from 'lucide-react';
+---
+
+<section id="about" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header Section amélioré -->
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-blue-100 text-primary-700 rounded-full text-sm font-semibold mb-6 shadow-sm">
+        <CheckCircle className="w-4 h-4" />
+        À propos de nous
+      </div>
+      <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        Votre Partenaire de 
+        <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Confiance</span>
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        Des solutions professionnelles et écoresponsables pour un environnement sain et sécurisé
+      </p>
+    </div>
+
+    <!-- Contenu principal restructuré -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center mb-20">
+      
+      <!-- Colonne de gauche - Texte (3/5) -->
+      <div class="lg:col-span-3">
+        <!-- Card principale avec le texte -->
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500">
+          <div class="mb-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+              <span class="text-primary-600">HygièneProtect3D</span>, votre expert en solutions d'hygiène
+            </h3>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Basés à <strong class="text-primary-600">Bondy</strong>, nous intervenons rapidement et efficacement à travers toute l'<strong class="text-primary-600">Île-de-France</strong> pour assurer la propreté et la sécurité de vos espaces, qu'ils soient résidentiels, commerciaux ou industriels.
+            </p>
+          </div>
+
+          <!-- Statistiques en ligne -->
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6 py-8 border-t border-gray-100">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-1">+500</div>
+              <div class="text-sm text-gray-600">Interventions</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600 mb-1">24h/7j</div>
+              <div class="text-sm text-gray-600">Disponibilité</div>
+            </div>
+            <div class="text-center col-span-2 md:col-span-1">
+              <div class="text-3xl font-bold text-primary-600 mb-1">100%</div>
+              <div class="text-sm text-gray-600">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colonne de droite - Points forts (2/5) -->
+      <div class="lg:col-span-2">
+        <div class="space-y-6">
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Award class="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Expertise & Expérience</h4>
+                <p class="text-gray-600 text-sm">Techniciens certifiés et expérimentés</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <CheckCircle class="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Engagement Écologique</h4>
+                <p class="text-gray-600 text-sm">Solutions respectueuses de l'environnement</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <CheckCircle class="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Disponibilité 24h/7j</h4>
+                <p class="text-gray-600 text-sm">Interventions d'urgence à tout moment</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Users class="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Solutions Personnalisées</h4>
+                <p class="text-gray-600 text-sm">Approche adaptée à vos besoins spécifiques</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <CheckCircle class="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-gray-900 mb-2">Interventions Rapides</h4>
+                <p class="text-gray-600 text-sm">Déplacement sous 4h pour les urgences</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section informations clés redesignée -->
+    <div class="relative overflow-hidden">
+      <!-- Background décoratif -->
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-blue-700 rounded-3xl"></div>
+      <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl"></div>
+      
+      <!-- Contenu -->
+      <div class="relative z-10 p-8 md:p-16">
+        <div class="text-center mb-12">
+          <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Notre Expertise à Votre Service
+          </h3>
+          <p class="text-xl text-white/90 max-w-2xl mx-auto">
+            Des professionnels qualifiés pour des interventions efficaces partout en Île-de-France
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Zone d'intervention -->
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 border border-white/30">
+              <MapPin class="w-10 h-10 text-white" />
+            </div>
+            <h4 class="text-2xl font-bold text-white mb-3">Zone d'Intervention</h4>
+            <p class="text-white/90 text-lg leading-relaxed">
+              Toute l'<strong>Île-de-France</strong><br/>
+              <span class="text-sm opacity-80">Paris, Bondy, Seine-Saint-Denis...</span>
+            </p>
+          </div>
+
+          <!-- Certifications -->
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 border border-white/30">
+              <Award class="w-10 h-10 text-white" />
+            </div>
+            <h4 class="text-2xl font-bold text-white mb-3">Certifications</h4>
+            <p class="text-white/90 text-lg leading-relaxed">
+              Experts certifiés<br/>
+              <strong>Certibiocide</strong><br/>
+              <span class="text-sm opacity-80">Agréments officiels</span>
+            </p>
+          </div>
+
+          <!-- Satisfaction client -->
+          <div class="text-center group">
+            <div class="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300 border border-white/30">
+              <Users class="w-10 h-10 text-white" />
+            </div>
+            <h4 class="text-2xl font-bold text-white mb-3">Clients Satisfaits</h4>
+            <p class="text-white/90 text-lg leading-relaxed">
+              <strong>+500</strong> interventions<br/>
+              réussies<br/>
+              <span class="text-sm opacity-80">100% de satisfaction</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-12">
+          <a 
+            href="/contact" 
+            class="inline-flex items-center gap-3 bg-white text-primary-600 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+          >
+            <span>Demander un devis gratuit</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

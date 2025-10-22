@@ -1,0 +1,70 @@
+---
+import { services } from '../data/services';
+import { ArrowRight } from 'lucide-react';
+---
+
+<section id="services" class="section section-gradient-primary">
+  <div class="section-container">
+    <!-- Header Section -->
+    <div class="section-header">
+      <div class="badge badge-primary">
+        Nos expertises
+      </div>
+      <h2 class="section-title">Nos Services</h2>
+      <p class="section-subtitle">
+        Solutions complètes et écoresponsables adaptées à vos besoins
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid-services">
+      {services.map(service => {
+        const IconComponent = service.icon;
+        return (
+          <a
+            href={`/services/${service.slug}`}
+            class="group service-card"
+          >
+            <!-- Header avec icône et gradient -->
+            <div class="service-card-header">
+              <div class="bg-decoration-card group-hover:bg-primary-300/30"></div>
+              <div class="relative">
+                <div class="icon-card group-hover:shadow-xl group-hover:scale-110">
+                  <IconComponent className="icon-lg text-primary-600 group-hover:text-primary-700 transition-colors duration-500" />
+                </div>
+                <h3 class="heading-card text-clamp-2 text-min-height-sm group-hover:text-primary-600">
+                  {service.title}
+                </h3>
+              </div>
+            </div>
+
+            <!-- Contenu de la carte -->
+            <div class="service-card-body">
+              <p class="text-description-sm text-clamp-3 flex-grow">
+                {service.description}
+              </p>
+
+              <!-- Call to Action -->
+              <div class="service-card-footer">
+                <div class="btn-cta group-hover:text-primary-700">
+                  <span class="text-responsive-base">En savoir plus</span>
+                  <div class="btn-icon-circle group-hover:bg-primary-600">
+                    <ArrowRight className="icon-md group-hover:text-white group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-12 sm:mt-16 text-center">
+      <a href="/contact" class="btn-primary">
+        <span>Demander un devis gratuit</span>
+        <ArrowRight className="icon-md" />
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,16 +1,41 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import InterventionProcess from '../components/InterventionProcess.astro';
+import Contact from '../components/Contact';
+import ContactSidebar from '../components/ContactSidebar';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Hygiène Protect 3D - Dératisation Bondy & Île-de-France | Devis Gratuit"
+  description="Expert en dératisation, désinsectisation et désinfection à Bondy et en Île-de-France. Intervention rapide 7j/7 contre rats, souris, cafards, punaises de lit. Devis gratuit ☎ 07 67 39 38 85"
+  keywords="dératisation Bondy, désinsectisation Île-de-France, extermination nuisibles 93, dératisation Paris, punaises de lit, cafards, rats, souris, désinfection professionnelle"
+  canonical="/"
+>
+  <div class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <Hero />
+      
+      <div class="section-container py-16">
+        <div class="grid-with-sidebar">
+          <div class="grid-main-content">
+            <About />
+            <Services />
+            <InterventionProcess />
+            <Contact client:load />
+          </div>
+          
+          <div class="grid-sidebar">
+            <ContactSidebar client:load />
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</Layout>
