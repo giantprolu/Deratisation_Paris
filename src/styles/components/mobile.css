@@ -1,0 +1,189 @@
+/* ===================================
+   MOBILE OPTIMIZATIONS
+   =================================== */
+
+/* Masquer les éléments sur mobile pour garder le focus */
+@media (max-width: 768px) {
+  
+  /* Réduire les espacements sur mobile */
+  .section {
+    @apply py-12;
+  }
+  
+  .section-container {
+    @apply px-4 py-8;
+  }
+
+  /* Optimiser les boutons pour le touch */
+  .btn-primary, 
+  .btn-secondary {
+    @apply min-h-[48px] px-6 py-3 text-base;
+    touch-action: manipulation;
+  }
+
+  /* Cards plus compactes sur mobile */
+  .service-card,
+  .process-card {
+    @apply p-4;
+  }
+
+  /* Texte optimisé pour mobile */
+  .heading-1 {
+    @apply text-3xl leading-tight;
+  }
+
+  .section-title {
+    @apply text-3xl;
+  }
+
+  /* Grilles responsives */
+  .grid-services {
+    @apply grid-cols-1 gap-6;
+  }
+
+  .grid-process {
+    @apply grid-cols-1 gap-6;
+  }
+
+  /* Optimisation des images */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Formulaires tactiles */
+  input, 
+  textarea, 
+  select {
+    @apply min-h-[48px] text-base;
+  }
+
+  /* Navigation sticky moins haute */
+  .navbar-mobile {
+    @apply h-16;
+  }
+
+  /* Espacements réduits */
+  .space-y-6 {
+    @apply space-y-4;
+  }
+
+  .space-y-8 {
+    @apply space-y-6;
+  }
+}
+
+/* Optimisations spécifiques pour très petits écrans */
+@media (max-width: 480px) {
+  
+  /* Padding réduit */
+  .px-4 {
+    @apply px-3;
+  }
+
+  /* Titres plus compacts */
+  .heading-1 {
+    @apply text-2xl;
+  }
+
+  /* Boutons full-width sur très petits écrans */
+  .btn-primary,
+  .btn-secondary {
+    @apply w-full justify-center;
+  }
+
+  /* Cards sans ombre sur très petits écrans */
+  .shadow-lg {
+    @apply shadow-md;
+  }
+
+  .shadow-xl {
+    @apply shadow-lg;
+  }
+}
+
+/* Optimisations pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+  
+  /* Désactiver les effets de survol sur tactile */
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+
+  .group:hover .group-hover\:scale-110 {
+    transform: none;
+  }
+
+  /* Augmenter la taille des zones tactiles */
+  a, button {
+    @apply min-h-[44px];
+  }
+
+  /* Améliorer le contraste pour la lisibilité */
+  .text-gray-600 {
+    @apply text-gray-700;
+  }
+
+  .text-gray-500 {
+    @apply text-gray-600;
+  }
+}
+
+/* Animation d'apparition pour les CTA mobiles */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-cta-animate {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Optimisation pour les performances sur mobile */
+@media (max-width: 768px) {
+  
+  /* Réduire les animations pour économiser la batterie */
+  .transition-all {
+    @apply transition-colors;
+  }
+
+  /* Simplifier les gradients complexes */
+  .bg-gradient-complex {
+    @apply bg-primary-50;
+  }
+
+  /* Réduire les ombres */
+  .shadow-2xl {
+    @apply shadow-xl;
+  }
+}
+
+/* Focus amélioré pour l'accessibilité */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  @apply ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Mode sombre - Optimisation mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  
+  /* Réduire la luminosité pour économiser la batterie */
+  .bg-white {
+    @apply bg-gray-900;
+  }
+
+  .text-gray-900 {
+    @apply text-gray-100;
+  }
+
+  .text-gray-600 {
+    @apply text-gray-300;
+  }
+}

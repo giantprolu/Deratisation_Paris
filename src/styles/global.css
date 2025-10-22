@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import component styles */
+@import './components/mobile.css';
+
 /* Base styles */
 * {
   margin: 0;

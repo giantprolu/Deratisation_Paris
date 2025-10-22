@@ -7,6 +7,7 @@ import Services from '../components/Services.astro';
 import InterventionProcess from '../components/InterventionProcess.astro';
 import Contact from '../components/Contact';
 import ContactSidebar from '../components/ContactSidebar';
+import MobileCTA from '../components/MobileCTA.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -21,7 +22,19 @@ import Footer from '../components/Footer.astro';
     <main class="flex-grow">
       <Hero />
       
-      <div class="section-container py-16">
+      <!-- Mobile: Layout simplifié, Desktop: Layout avec sidebar -->
+      <div class="block md:hidden">
+        <!-- Version mobile simplifiée -->
+        <About />
+        <Services />
+        <!-- InterventionProcess masqué sur mobile pour simplifier -->
+        <div class="px-4 py-8">
+          <Contact client:load />
+        </div>
+      </div>
+      
+      <div class="hidden md:block section-container py-16">
+        <!-- Version desktop avec sidebar -->
         <div class="grid-with-sidebar">
           <div class="grid-main-content">
             <About />
@@ -36,6 +49,9 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </main>
+    
+    <!-- CTA Flottant Mobile -->
+    <MobileCTA />
+    
     <Footer />
-  </div>
 </Layout>

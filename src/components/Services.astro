@@ -5,66 +5,124 @@ import { ArrowRight } from 'lucide-react';
 
 <section id="services" class="section section-gradient-primary">
   <div class="section-container">
-    <!-- Header Section -->
+    <!-- Header Section - Optimisé mobile -->
     <div class="section-header">
-      <div class="badge badge-primary">
+      <div class="badge badge-primary hidden sm:inline-flex">
         Nos expertises
       </div>
-      <h2 class="section-title">Nos Services</h2>
-      <p class="section-subtitle">
-        Solutions complètes et écoresponsables adaptées à vos besoins
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-center">
+        <span class="block md:hidden">Nos Services</span>
+        <span class="hidden md:block">Nos Services Professionnels</span>
+      </h2>
+      <p class="text-base md:text-xl text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
+        <span class="block md:hidden">Solutions rapides contre tous nuisibles</span>
+        <span class="hidden md:block">Solutions complètes et écoresponsables adaptées à vos besoins</span>
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid-services">
-      {services.map(service => {
+    <!-- Services Grid - Responsive optimisé -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+{services.slice(0, 6).map((service, index) => {
         const IconComponent = service.icon;
         return (
-          <a
-            href={`/services/${service.slug}`}
-            class="group service-card"
-          >
-            <!-- Header avec icône et gradient -->
-            <div class="service-card-header">
-              <div class="bg-decoration-card group-hover:bg-primary-300/30"></div>
-              <div class="relative">
-                <div class="icon-card group-hover:shadow-xl group-hover:scale-110">
-                  <IconComponent className="icon-lg text-primary-600 group-hover:text-primary-700 transition-colors duration-500" />
-                </div>
-                <h3 class="heading-card text-clamp-2 text-min-height-sm group-hover:text-primary-600">
-                  {service.title}
-                </h3>
+          <div class="group bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-200 hover:-translate-y-2 relative overflow-hidden">
+            
+            <!-- Gradient décoratif -->
+            <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary-100 to-blue-100 rounded-bl-3xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+            
+            <!-- Contenu principal -->
+            <div class="relative z-10">
+              <!-- Icône -->
+              <div class="w-16 h-16 lg:w-20 lg:h-20 bg-primary-50 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:bg-primary-100 group-hover:scale-110 transition-all duration-300">
+                <IconComponent className="w-8 h-8 lg:w-10 lg:h-10 text-primary-600" />
               </div>
-            </div>
 
-            <!-- Contenu de la carte -->
-            <div class="service-card-body">
-              <p class="text-description-sm text-clamp-3 flex-grow">
-                {service.description}
+              <!-- Titre -->
+              <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-primary-600 transition-colors duration-300 leading-tight min-h-[2.5rem] lg:min-h-[3rem]">
+                {service.title}
+              </h3>
+
+              <!-- Description - Plus courte sur mobile -->
+              <p class="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">
+                <span class="block md:hidden">{service.description.substring(0, 80)}...</span>
+                <span class="hidden md:block">{service.description}</span>
               </p>
 
-              <!-- Call to Action -->
-              <div class="service-card-footer">
-                <div class="btn-cta group-hover:text-primary-700">
-                  <span class="text-responsive-base">En savoir plus</span>
-                  <div class="btn-icon-circle group-hover:bg-primary-600">
-                    <ArrowRight className="icon-md group-hover:text-white group-hover:translate-x-1" />
-                  </div>
+              <!-- Actions - UX/UI optimisée -->
+              <div class="flex flex-col gap-3">
+                <!-- Action principale - Plus élégante sur mobile -->
+                <a
+                  href={`/services/${service.slug}`}
+                  class="w-full bg-gradient-to-r from-primary-600 to-blue-600 text-white py-3 px-6 rounded-xl font-semibold text-center hover:from-primary-700 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+                >
+                  <span class="block md:hidden">Découvrir</span>
+                  <span class="hidden md:block">En savoir plus</span>
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                </a>
+                
+                <!-- Action secondaire - Contact -->
+                <div class="flex gap-2">
+                  <a
+                    href="/contact"
+                    class="flex-1 bg-white text-primary-600 py-2 px-4 rounded-lg font-medium text-center border border-primary-200 hover:bg-primary-50 hover:border-primary-600 transition-all duration-300 text-sm"
+                  >
+                    Devis gratuit
+                  </a>
+                  <a
+                    href="tel:+33767393885"
+                    class="bg-green-50 text-green-700 py-2 px-4 rounded-lg font-medium hover:bg-green-100 transition-all duration-300 text-sm flex items-center gap-1"
+                  >
+                    <span class="hidden sm:block">Appel</span>
+                    📞
+                  </a>
                 </div>
               </div>
             </div>
-          </a>
+
+            <!-- Bordure animée -->
+            <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+          </div>
         );
       })}
     </div>
 
-    <!-- CTA Section -->
-    <div class="mt-12 sm:mt-16 text-center">
-      <a href="/contact" class="btn-primary">
-        <span>Demander un devis gratuit</span>
-        <ArrowRight className="icon-md" />
-      </a>
+    <!-- CTA Section - Plus équilibré et élégant -->
+    <div class="mt-16 text-center">
+      <!-- Version unifiée mobile/desktop -->
+      <div class="bg-gradient-to-br from-primary-50 to-blue-50 rounded-3xl p-8 md:p-12 border border-primary-100">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Une Question ? Un Devis ?
+        </h3>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <span class="block md:hidden">Nos experts vous conseillent gratuitement</span>
+          <span class="hidden md:block">Nos experts vous conseillent et établissent un devis personnalisé gratuit</span>
+        </p>
+        
+        <!-- Actions élégantes -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <a href="/contact" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-primary-700 hover:scale-105 transition-all duration-300 shadow-lg">
+            <span>Devis gratuit</span>
+            <ArrowRight className="w-5 h-5" />
+          </a>
+          
+          <a href="tel:+33767393885" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-white text-primary-600 px-6 py-4 rounded-2xl font-semibold border-2 border-primary-200 hover:border-primary-600 hover:bg-primary-50 transition-all duration-300">
+            📞 <span class="hidden sm:block">07 67 39 38 85</span><span class="sm:hidden">Appeler</span>
+          </a>
+        </div>
+        
+        <!-- Info rassurante -->
+        <div class="mt-6 flex items-center justify-center gap-6 text-sm text-gray-500">
+          <span class="flex items-center gap-1">
+            ✓ Devis gratuit
+          </span>
+          <span class="flex items-center gap-1">
+            ✓ Sans engagement
+          </span>
+          <span class="hidden sm:flex items-center gap-1">
+            ✓ Réponse sous 2h
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
