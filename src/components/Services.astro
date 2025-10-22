@@ -86,42 +86,24 @@ import { ArrowRight } from 'lucide-react';
       })}
     </div>
 
-    <!-- CTA Section - Plus équilibré et élégant -->
-    <div class="mt-16 text-center">
-      <!-- Version unifiée mobile/desktop -->
-      <div class="bg-gradient-to-br from-primary-50 to-blue-50 rounded-3xl p-8 md:p-12 border border-primary-100">
-        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-          Une Question ? Un Devis ?
-        </h3>
-        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-          <span class="block md:hidden">Nos experts vous conseillent gratuitement</span>
-          <span class="hidden md:block">Nos experts vous conseillent et établissent un devis personnalisé gratuit</span>
-        </p>
-        
-        <!-- Actions élégantes -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-          <a href="/contact" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-primary-700 hover:scale-105 transition-all duration-300 shadow-lg">
-            <span>Devis gratuit</span>
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          
-          <a href="tel:+33767393885" class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-3 bg-white text-primary-600 px-6 py-4 rounded-2xl font-semibold border-2 border-primary-200 hover:border-primary-600 hover:bg-primary-50 transition-all duration-300">
-            📞 <span class="hidden sm:block">07 67 39 38 85</span><span class="sm:hidden">Appeler</span>
-          </a>
-        </div>
-        
-        <!-- Info rassurante -->
-        <div class="mt-6 flex items-center justify-center gap-6 text-sm text-gray-500">
-          <span class="flex items-center gap-1">
-            ✓ Devis gratuit
-          </span>
-          <span class="flex items-center gap-1">
-            ✓ Sans engagement
-          </span>
-          <span class="hidden sm:flex items-center gap-1">
-            ✓ Réponse sous 2h
-          </span>
-        </div>
+    <!-- CTA Section - Optimisé mobile -->
+    <div class="mt-12 sm:mt-16 text-center">
+      <!-- Mobile: CTA principal avec numéro -->
+      <div class="block md:hidden space-y-4">
+        <a href="tel:+33767393885" class="block w-full bg-green-600 text-white py-4 px-6 rounded-2xl font-bold text-lg hover:bg-green-700 transition-colors duration-300 shadow-xl">
+          📞 Appeler maintenant : 07 67 39 38 85
+        </a>
+        <a href="/contact" class="block w-full bg-primary-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary-700 transition-colors duration-300">
+          ✉️ Demander un devis gratuit
+        </a>
+      </div>
+      
+      <!-- Desktop: CTA classique -->
+      <div class="hidden md:block">
+        <a href="/contact" class="inline-flex items-center gap-3 bg-primary-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-primary-700 hover:scale-105 transition-all duration-300 shadow-xl">
+          <span>Demander un devis gratuit</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
       </div>
     </div>
   </div>
