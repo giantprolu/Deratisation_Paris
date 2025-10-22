@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import component styles */
 @import './components/mobile.css';
 
 /* Base styles */
@@ -68,7 +67,7 @@ body {
 }
 
 .btn-primary {
-  @apply inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-dark text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-xl;
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-xl;
 }
 
 .btn-secondary {
