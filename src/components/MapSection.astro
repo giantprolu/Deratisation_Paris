@@ -1,0 +1,142 @@
+---
+import Map from './Map.astro';
+
+export interface Props {
+  id?: string;
+}
+
+const { id = 'main-map' } = Astro.props;
+---
+
+<section id="map-section" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 text-primary-600 rounded-full text-sm font-medium mb-4">
+        🗺️ Zone d'intervention
+      </div>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        Notre Zone de Couverture
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Intervention rapide dans un rayon de 30km autour de Paris. 
+        Contactez-nous pour découvrir nos services dans votre secteur.
+      </p>
+    </div>
+
+    <!-- Carte et informations -->
+    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+      <!-- Statistiques -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">50+ Villes</h3>
+          <p class="text-gray-600">
+            Couverture complète de l'Île-de-France
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">1H</h3>
+          <p class="text-gray-600">
+            Délai d'intervention moyen
+          </p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-2">24h/7j</h3>
+          <p class="text-gray-600">
+            Service d'urgence disponible
+          </p>
+        </div>
+      </div>
+
+      <!-- Zone de carte -->
+      <div class="relative">
+        <div class="h-96 lg:h-[500px] rounded-lg overflow-hidden bg-gradient-to-br from-blue-100 to-primary-100">
+          <!-- Carte Leaflet interactive -->
+          <Map id={id} />
+        </div>
+      </div>
+    </div>
+    
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">
+        Vous ne trouvez pas votre commune sur la carte ?
+      </p>
+      <a 
+        href="contact"
+        class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium"
+      >
+        Contactez-nous pour vérifier
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Informations structurées pour le SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeoShape",
+  "addressCountry": "FR",
+  "addressRegion": "Île-de-France",
+  "postalCode": "93140",
+  "addressLocality": "Bondy",
+  "geoRadius": "30000",
+  "geoMidpoint": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.9023,
+    "longitude": 2.4823
+  }
+}
+</script>
+
+<style>
+  /* Styles pour la section carte */
+  #map-display {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    #map-display {
+      height: 400px !important;
+    }
+    
+    .grid-cols-1.md\\:grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Animation des boutons */
+  .hover\\:bg-primary-700:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+  }
+  
+  .hover\\:bg-gray-50:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+</style>
+

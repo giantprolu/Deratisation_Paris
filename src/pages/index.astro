@@ -8,6 +8,7 @@ import InterventionProcess from '../components/InterventionProcess.astro';
 import Contact from '../components/Contact';
 import ContactSidebar from '../components/ContactSidebar';
 import MobileCTA from '../components/MobileCTA.astro';
+import MapSection from '../components/MapSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -31,6 +32,7 @@ import Footer from '../components/Footer.astro';
         <div class="px-4 py-8">
           <Contact client:load />
         </div>
+        <MapSection id="mobile-map" />
       </div>
       
       <div class="hidden md:block section-container py-16">
@@ -41,6 +43,7 @@ import Footer from '../components/Footer.astro';
             <Services />
             <InterventionProcess />
             <Contact client:load />
+            <MapSection id="desktop-map" />
           </div>
           
           <div class="grid-sidebar">

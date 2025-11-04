@@ -1,0 +1,67 @@
+---
+// Pas d'import Leaflet ici, sinon erreur SSR !
+export interface Props {
+  id?: string;
+}
+
+const { id = 'map' } = Astro.props;
+---
+
+<div id={id} style="height: 100%; width: 100%; min-height: 400px;"></div>
+
+<!-- Chargement de Leaflet via CDN -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+<script src="/js/map-client.js" is:inline></script>
+
+<script define:vars={{ mapId: id }} is:inline>
+  // Attendre que tous les scripts soient chargés
+  function waitForLeaflet() {
+    if (typeof L !== 'undefined' && typeof window.initializeMap !== 'undefined') {
+      // Initialiser la carte
+      window.initializeMap(mapId);
+    } else {
+      // Réessayer dans 100ms
+      setTimeout(waitForLeaflet, 100);
+    }
+  }
+  
+  // Commencer à vérifier dès que le DOM est prêt
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', waitForLeaflet);
+  } else {
+    waitForLeaflet();
+  }
+</script>
+
+<style>
+  /* Assurer que la carte prend toute la taille de son conteneur */
+  div[id*="map"] {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 400px;
+    position: relative;
+    z-index: 1; /* Z-index bas pour la carte */
+  }
+  
+  /* Styles spécifiques pour les conteneurs Leaflet */
+  .leaflet-container {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0.5rem; /* rounded-lg */
+    z-index: 1 !important; /* S'assurer que la carte reste en arrière */
+  }
+  
+  /* Contrôles Leaflet avec z-index approprié */
+  .leaflet-control-container {
+    z-index: 2 !important;
+  }
+  
+  .leaflet-popup {
+    z-index: 3 !important;
+  }
+  
+  /* Empêcher la carte de passer au-dessus des éléments de navigation */
+  .leaflet-map-pane {
+    z-index: 1 !important;
+  }
+</style>

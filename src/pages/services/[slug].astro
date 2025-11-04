@@ -6,6 +6,7 @@ import Footer from '../../components/Footer.astro';
 import ContactSidebar from '../../components/ContactSidebar';
 import InterventionProcess from '../../components/InterventionProcess.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ServiceSEO from '../../components/ServiceSEO.astro';
 import { CheckCircle, ArrowLeft, Phone } from 'lucide-react';
 
 export function getStaticPaths() {
@@ -25,6 +26,15 @@ const IconComponent = service.icon;
   keywords={`${service.slug}, ${service.title.toLowerCase()}, professionnel Bondy, Île-de-France, intervention rapide`}
   canonical={`/services/${service.slug}`}
 >
+  <!-- Composant SEO avancé pour le service -->
+  <ServiceSEO 
+    serviceName={service.title}
+    serviceSlug={service.slug}
+    description={service.metaDescription}
+    city="Paris"
+    department="75"
+  />
+  
   <div class="min-h-screen flex flex-col">
     <Navbar />
     <main class="flex-grow">
@@ -83,7 +93,7 @@ const IconComponent = service.icon;
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.features.map((feature, index) => (
-                    <div key={index} class="flex items-start gap-3 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow">
+                    <div class="flex items-start gap-3 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow">
                       <CheckCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
                       <span class="text-gray-700 text-sm leading-relaxed">{feature}</span>
                     </div>
@@ -98,7 +108,7 @@ const IconComponent = service.icon;
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {service.benefits.map((benefit, index) => (
-                    <div key={index} class="flex items-start bg-blue-50 p-4 rounded-lg">
+                    <div class="flex items-start bg-blue-50 p-4 rounded-lg">
                       <CheckCircle className="h-5 w-5 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
                       <span class="text-gray-700">{benefit}</span>
                     </div>
@@ -114,7 +124,7 @@ const IconComponent = service.icon;
                   </h2>
                   <div class="space-y-8">
                     {service.equipments.map((equipment, index) => (
-                      <div key={index} class="bg-gradient-to-br from-blue-50 to-primary-50 rounded-2xl p-8 border border-primary-100">
+                      <div class="bg-gradient-to-br from-blue-50 to-primary-50 rounded-2xl p-8 border border-primary-100">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                           <div class="md:col-span-1">
                             <img
@@ -149,7 +159,7 @@ const IconComponent = service.icon;
                       .filter(s => s.id !== service.id)
                       .slice(0, 4)
                       .map(otherService => (
-                        <li key={otherService.id}>
+                        <li>
                           <a
                             href={`/services/${otherService.slug}`}
                             class="text-primary-600 hover:text-primary-dark hover:underline transition-colors"

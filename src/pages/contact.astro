@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Contact from '../components/Contact';
+import ContactForm from '../components/Contact';
 ---
 
 <Layout
@@ -14,7 +14,7 @@ import Contact from '../components/Contact';
   <div class="min-h-screen flex flex-col">
     <Navbar />
     <main class="flex-grow">
-      <Contact client:load />
+      <ContactForm client:only="react" />
     </main>
     <Footer />
   </div>

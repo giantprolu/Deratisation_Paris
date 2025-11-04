@@ -64,7 +64,7 @@ const processSteps = [
     <!-- Header Section -->
     <div class="section-header">
       <div class="badge badge-gradient">
-        <CheckCircle class="icon-sm" />
+        <CheckCircle className="icon-sm" />
         Notre méthodologie
       </div>
       <h2 class="section-title">
@@ -82,7 +82,6 @@ const processSteps = [
         const isLastCard = index === processSteps.length - 1;
         return (
           <div
-            key={index}
             class={`group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-200 hover:-translate-y-3 overflow-hidden ${isLastCard && processSteps.length === 5 ? 'md:col-span-2 xl:col-span-1 md:mx-auto xl:mx-0 md:max-w-md xl:max-w-none' : ''}`}
           >
             <!-- Numéro d'étape stylisé -->
@@ -110,7 +109,6 @@ const processSteps = [
                 <div class="flex flex-wrap gap-2">
                   {step.details.split(' • ').map((detail, detailIndex) => (
                     <span 
-                      key={detailIndex}
                       class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 group-hover:bg-primary-50 group-hover:text-primary-700 transition-colors duration-300"
                     >
                       {detail}
@@ -181,8 +179,8 @@ const processSteps = [
                   <p class="text-xs text-gray-500">Disponible 7j/7 - Urgences 24h/24</p>
                 </div>
                 <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-transform duration-300">
-                  <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </a>
