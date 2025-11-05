@@ -1,0 +1,145 @@
+/* Navbar Component Styles */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #f3f4f6;
+  width: 100%;
+}
+
+.navbar-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .navbar-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar-logo-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #2563eb;
+}
+
+.navbar-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.navbar-logo-accent {
+  color: #2563eb;
+}
+
+/* Desktop Navigation */
+.navbar-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar-desktop {
+    display: block;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-nav-link {
+  padding: 0.5rem 1rem;
+  color: #374151;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-radius: 0.375rem;
+}
+
+.navbar-nav-link:hover {
+  color: #2563eb;
+  background-color: #f3f4f6;
+}
+
+.navbar-nav-link.active {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.navbar-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-cta-button:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.navbar-cta-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Mobile Menu Button */
+.navbar-mobile-button {
+  display: block;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #374151;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-button {
+    display: none;
+  }
+}
+
+.navbar-mobile-button:hover {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+.navbar-mobile-button-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

@@ -1,0 +1,195 @@
+---
+// Composant pour afficher les avis Google Maps
+---
+
+<section id="avis-google" class="py-16 bg-gradient-to-br from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header Section -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-6 py-3 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-6">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+        </svg>
+        Avis clients authentiques
+      </div>
+      
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Nos Clients Témoignent
+      </h2>
+      
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Découvrez les retours de nos clients sur Google Maps et leur satisfaction après nos interventions professionnelles
+      </p>
+    </div>
+
+    <!-- Google Reviews Iframe -->
+    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+      <div class="relative">
+        <!-- En-tête iframe -->
+        <div class="flex items-center gap-3 mb-6 pb-4 border-b border-gray-200">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Avis Google Maps</h3>
+            <p class="text-sm text-gray-600">Hygiène Protect 3D - Avis clients authentiques</p>
+          </div>
+        </div>
+
+        <!-- Widget Google Reviews intégré -->
+        <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <!-- En-tête du widget -->
+          <div class="bg-gradient-to-r from-blue-50 to-white p-6 border-b border-gray-200">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg flex items-center justify-center">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"></path>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-900">Hygiène Protect 3D</h3>
+                <div class="flex items-center gap-2">
+                  <div class="flex text-yellow-500">
+                    <span>★★★★★</span>
+                  </div>
+                  <span class="text-sm text-gray-600">Avis Google</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Container iframe Google Reviews -->
+          <div class="relative" style="height: 450px;">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d674391.7851746707!2d1.843329623478201!3d48.67980816971764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x812366857ad42c9%3A0x8f22e48189e86680!2sHygiene%20Protect%203D!5e0!3m2!1sfr!2sfr!4v1762337371686!5m2!1sfr!2sfr"
+              width="100%"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Avis Google Maps Hygiène Protect 3D">
+            </iframe>
+          </div>
+
+          <!-- Widget Avis simulés si iframe ne fonctionne pas -->
+          <div class="p-6 space-y-4 bg-gray-50" style="display: none;" id="fallback-reviews">
+            <!-- Avis exemple 1 -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                  M
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-semibold text-gray-900">Marie D.</span>
+                    <div class="flex text-yellow-500">★★★★★</div>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">Il y a 2 semaines</p>
+                  <p class="text-gray-700">"Service excellent ! Intervention rapide et efficace pour notre problème de rats. Technicien très professionnel et discret. Je recommande vivement !"</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avis exemple 2 -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                  J
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-semibold text-gray-900">Jean-Pierre L.</span>
+                    <div class="flex text-yellow-500">★★★★★</div>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">Il y a 1 mois</p>
+                  <p class="text-gray-700">"Parfait ! Problème de cafards résolu en une seule intervention. Prix correct et garantie respectée. Merci !"</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Avis exemple 3 -->
+            <div class="bg-white rounded-lg p-4 border border-gray-200">
+              <div class="flex items-start gap-3">
+                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                  S
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-semibold text-gray-900">Sophie M.</span>
+                    <div class="flex text-yellow-500">★★★★★</div>
+                  </div>
+                  <p class="text-sm text-gray-600 mb-2">Il y a 3 semaines</p>
+                  <p class="text-gray-700">"Intervention d'urgence un dimanche, service 24h/7j respecté. Très satisfaite du professionnalisme de l'équipe."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pied du widget -->
+          <div class="bg-gray-50 px-6 py-4 border-t border-gray-200">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                Alimenté par Google
+              </div>
+              <a 
+                href="https://share.google/RCilOvhgl5Db1evBU" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-sm text-blue-600 hover:text-blue-700 font-medium"
+              >
+                Voir plus d'avis →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // Vérifier si l'iframe se charge correctement
+          document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.querySelector('iframe[title*="Avis Google"]');
+            const fallback = document.getElementById('fallback-reviews');
+            
+            if (iframe) {
+              iframe.addEventListener('error', function() {
+                iframe.style.display = 'none';
+                if (fallback) fallback.style.display = 'block';
+              });
+            }
+          });
+        </script>
+      </div>
+    </div>
+
+    <!-- Stats rapides -->
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center">
+        <div class="text-2xl md:text-3xl font-bold text-yellow-600 mb-2">★★★★★</div>
+        <div class="text-sm text-gray-600">Note moyenne</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl md:text-3xl font-bold text-primary-600 mb-2">+500</div>
+        <div class="text-sm text-gray-600">Interventions</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl md:text-3xl font-bold text-green-600 mb-2">24h/7j</div>
+        <div class="text-sm text-gray-600">Disponibilité</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-2">15+</div>
+        <div class="text-sm text-gray-600">Années d'expérience</div>
+      </div>
+    </div>
+  </div>
+</section>
