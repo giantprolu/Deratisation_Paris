@@ -5,29 +5,34 @@ import NavbarMobile from './NavbarMobile';
 
 <nav class="bg-white shadow-sm sticky top-0 w-full z-50 border-b border-gray-100" aria-label="Main Navigation">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Mobile: Header simplifié avec focus sur l'action -->
-    <div class="flex md:hidden justify-between items-center h-16">
-      <a href="/" class="text-lg font-bold text-primary-600">HP3D</a>
-      <div class="flex items-center gap-3">
-        <a href="tel:+33767393885" class="bg-green-600 text-white px-4 py-2 rounded-xl font-semibold text-sm flex items-center gap-2 hover:bg-green-700 transition-colors">
-          📞 Appeler
-        </a>
+    <!-- Mobile: Header moderne avec glassmorphism -->
+    <div class="flex md:hidden justify-between items-center h-20">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+          <span class="text-white font-bold text-lg">H</span>
+        </div>
+        <div>
+          <div class="text-xl font-bold text-primary-600">HP3D</div>
+          <div class="text-xs text-gray-500 -mt-1">Hygiène Protect</div>
+        </div>
+      </a>
+      <div class="flex items-center">
         <NavbarMobile client:load />
       </div>
     </div>
     
     <!-- Desktop: Header complet -->
-    <div class="hidden md:flex justify-between h-20">
+    <div class="hidden md:flex justify-between h-24">
       <div class="flex items-center">
-        <a href="/" class="text-2xl font-bold text-primary-600">Hygiène Protect 3D</a>
+        <a href="/" class="text-3xl font-bold text-primary-600">Hygiène Protect 3D</a>
       </div>
 
-      <div class="flex items-center space-x-8">
-        <a href="/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Accueil">Accueil</a>
-        <a href="/services" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Services">Services</a>
-        <a href="/contact" class="text-gray-700 hover:text-primary-600 transition-colors font-medium" aria-label="Contact">Contact</a>
-        <a href="tel:+33767393885" class="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-dark text-white rounded-lg transition-colors font-medium" aria-label="Phone Number">
-          <PhoneCall className="w-4 h-4" />
+      <div class="flex items-center space-x-10">
+        <a href="/" class="text-gray-700 hover:text-primary-600 transition-colors font-medium text-lg" aria-label="Accueil">Accueil</a>
+        <a href="/services" class="text-gray-700 hover:text-primary-600 transition-colors font-medium text-lg" aria-label="Services">Services</a>
+        <a href="/contact" class="text-gray-700 hover:text-primary-600 transition-colors font-medium text-lg" aria-label="Contact">Contact</a>
+        <a href="tel:+33767393885" class="flex items-center gap-3 px-6 py-3 bg-primary-600 hover:bg-primary-dark text-white rounded-lg transition-colors font-medium text-lg" aria-label="Phone Number">
+          <PhoneCall className="w-5 h-5" />
           <span>07 67 39 38 85</span>
         </a>
       </div>

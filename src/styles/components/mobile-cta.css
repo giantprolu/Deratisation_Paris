@@ -1,0 +1,104 @@
+/* Mobile CTA Component Styles */
+
+.mobile-cta-wrapper {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .mobile-cta-wrapper {
+    display: none;
+  }
+}
+
+.mobile-cta-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.mobile-cta-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mobile-cta-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-cta-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.mobile-cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-cta-button:hover::before {
+  transform: translateX(100%);
+}
+
+.mobile-cta-button:active {
+  transform: translateY(0);
+}
+
+.mobile-cta-button-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.mobile-cta-button-text {
+  font-size: 0.75rem;
+  color: white;
+  text-align: center;
+}
+
+/* Animation pour l'apparition */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-cta-container {
+  animation: slideUp 0.5s ease-out;
+}

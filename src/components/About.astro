@@ -2,10 +2,10 @@
 import { CheckCircle, MapPin, Award, Users } from 'lucide-react';
 ---
 
-<section id="about" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+<section id="about" class="pt-4 pb-8 md:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header Section amélioré -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-8 md:mb-20">
       <div class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary-100 to-blue-100 text-primary-700 rounded-full text-sm font-semibold mb-6 shadow-sm">
         <CheckCircle className="w-4 h-4" />
         À propos de nous
@@ -57,24 +57,12 @@ import { CheckCircle, MapPin, Award, Users } from 'lucide-react';
               <div class="text-sm text-gray-600">Satisfaction</div>
             </div>
           </div>
-
-          <!-- CTA Mobile - Plus subtil -->
-          <div class="block lg:hidden pt-6 border-t border-gray-100">
-            <div class="flex gap-3">
-              <a href="/contact" class="flex-1 bg-primary-600 text-white py-3 px-4 rounded-xl font-medium text-center hover:bg-primary-700 transition-colors duration-300 text-sm">
-                Devis gratuit
-              </a>
-              <a href="/services" class="flex-1 bg-white text-primary-600 py-3 px-4 rounded-xl font-medium text-center border border-primary-200 hover:bg-primary-50 transition-colors duration-300 text-sm">
-                Nos services
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- Section informations clés redesignée -->
-    <div class="relative overflow-hidden">
+    <!-- Section Notre Expertise à Votre Service - Desktop uniquement -->
+    <div class="hidden md:block relative overflow-hidden">
       <!-- Background décoratif -->
       <div class="absolute inset-0 bg-gradient-to-br from-primary-600 to-blue-700 rounded-3xl"></div>
       <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>

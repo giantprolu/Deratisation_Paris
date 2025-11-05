@@ -1,0 +1,352 @@
+/* About Section - Cohérent avec le style global */
+
+/* Section principale utilisant les classes globales */
+.about-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(to bottom right, #f9fafb, white, #eff6ff);
+}
+
+.about-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .about-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Header de section cohérent avec section-header */
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: #dbeafe;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
+}
+
+.about-badge-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.about-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .about-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-title {
+    font-size: 3rem;
+  }
+}
+
+.about-title-accent {
+  color: #2563eb;
+}
+
+.about-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .about-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Grille des statistiques utilisant le style des cartes globales */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stats-card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .stats-card {
+    padding: 2rem;
+  }
+}
+
+.stats-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-0.5rem);
+}
+
+.stats-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: all 0.3s ease;
+}
+
+.stats-icon-interventions {
+  background-color: #dbeafe;
+}
+
+.stats-icon-availability {
+  background-color: #bfdbfe;
+}
+
+.stats-icon-satisfaction {
+  background-color: #93c5fd;
+}
+
+.stats-card:hover .stats-icon {
+  transform: scale(1.1);
+}
+
+.stats-card:hover .stats-icon-interventions {
+  background-color: #bfdbfe;
+}
+
+.stats-card:hover .stats-icon-availability {
+  background-color: #93c5fd;
+}
+
+.stats-card:hover .stats-icon-satisfaction {
+  background-color: #60a5fa;
+}
+
+.stats-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.stats-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.stats-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+/* Section expertise avec background bleu */
+.expertise-section {
+  background: linear-gradient(to bottom right, #1e40af, #1d4ed8, #2563eb);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .expertise-section {
+    padding: 4rem 3rem;
+  }
+}
+
+.expertise-content {
+  position: relative;
+  z-index: 2;
+}
+
+.expertise-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.expertise-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .expertise-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .expertise-title {
+    font-size: 3rem;
+  }
+}
+
+.expertise-subtitle {
+  font-size: 1.125rem;
+  color: #dbeafe;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Grille expertise */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.expertise-card {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-0.25rem);
+}
+
+.expertise-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(219, 234, 254, 0.2);
+}
+
+.expertise-card:hover .expertise-icon {
+  background-color: rgba(219, 234, 254, 0.3);
+  transform: scale(1.05);
+}
+
+.expertise-icon-svg {
+  width: 2rem;
+  height: 2rem;
+  color: #dbeafe;
+}
+
+.expertise-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.expertise-card-text {
+  color: #dbeafe;
+  line-height: 1.6;
+}
+
+.expertise-highlight {
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+.expertise-detail {
+  font-size: 0.875rem;
+  color: #bfdbfe;
+}
+
+/* CTA utilisant le style des boutons globaux */
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.cta-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Animation d'entrée cohérente */
+.about-title {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
