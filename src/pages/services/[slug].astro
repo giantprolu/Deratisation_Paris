@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ContactSidebar from '../../components/ContactSidebar';
+import FloatingActionButton from '../../components/FloatingActionButton';
 import InterventionProcess from '../../components/InterventionProcess.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ServiceSEO from '../../components/ServiceSEO.astro';
@@ -179,6 +180,10 @@ const IconComponent = service.icon;
       <!-- Processus d'Intervention - Composant Global -->
       <InterventionProcess />
     </main>
+    
+    <!-- Floating Action Button -->
+    <FloatingActionButton client:load />
+    
     <Footer />
   </div>
 </Layout>
