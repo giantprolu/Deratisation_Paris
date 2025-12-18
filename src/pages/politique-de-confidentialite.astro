@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FloatingActionButton from '../components/FloatingActionButton';
 ---
 
 <Layout
@@ -168,6 +169,10 @@ import Footer from '../components/Footer.astro';
         </div>
       </div>
     </main>
+    
+    <!-- Floating Action Button -->
+    <FloatingActionButton client:load />
+    
     <Footer />
   </div>
 </Layout>

@@ -1,0 +1,187 @@
+/* Contact Sidebar Component Styles */
+
+.contact-sidebar {
+  position: fixed;
+  top: 50%;
+  right: 1.5rem;
+  width: 20rem;
+  z-index: 40;
+  display: none;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Afficher seulement sur les grands écrans */
+@media (min-width: 1280px) {
+  .contact-sidebar {
+    display: block;
+  }
+}
+
+/* Masquer le sidebar au début et à la fin */
+.contact-sidebar.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ajustement pour très grands écrans */
+@media (min-width: 1536px) {
+  .contact-sidebar {
+    right: calc((100vw - 80rem) / 2 - 22rem);
+  }
+}
+
+.contact-sidebar-card {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-sidebar-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.contact-sidebar-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .contact-sidebar-description {
+    font-size: 1rem;
+  }
+}
+
+.contact-sidebar-button-primary {
+  display: block;
+  width: 100%;
+  background-color: white;
+  color: #2563eb;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.contact-sidebar-button-primary:hover {
+  background-color: #f9fafb;
+}
+
+.contact-sidebar-button-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  background-color: #111827;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.contact-sidebar-button-secondary:hover {
+  background-color: #1f2937;
+}
+
+.contact-sidebar-button-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Points clés card */
+.contact-sidebar-features {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.contact-sidebar-features:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.contact-sidebar-features-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.contact-sidebar-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-sidebar-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-sidebar-feature-item:hover {
+  background-color: #eff6ff;
+}
+
+.contact-sidebar-feature-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #2563eb;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.contact-sidebar-feature-text {
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Animation d'entrée */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.contact-sidebar {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+/* Scroll adaptatif */
+@media (max-height: 800px) {
+  .contact-sidebar {
+    top: 4rem;
+  }
+}

@@ -1,0 +1,98 @@
+/* DOM Optimization CSS */
+
+/* Simplifier les structures complexes sur mobile */
+@media (max-width: 768px) {
+  /* Réduire la complexité des cartes */
+  .service-card::before,
+  .service-card::after {
+    display: none;
+  }
+  
+  /* Simplifier les gradients complexes */
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    background: var(--fallback-bg, #ffffff);
+  }
+  
+  /* Masquer les éléments décoratifs non essentiels */
+  .decoration-element,
+  .blur-effect,
+  .absolute.top-0.right-0,
+  .absolute.bottom-0.left-0 {
+    display: none !important;
+  }
+  
+  /* Simplifier les ombres multiples */
+  .shadow-xl,
+  .shadow-2xl {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Optimiser les transformations */
+  .transform,
+  [class*="rotate-"] {
+    transform: none !important;
+  }
+  
+  /* Réduire les animations complexes */
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin {
+    animation: none !important;
+  }
+}
+
+/* Optimisations générales pour réduire le DOM */
+.hidden-mobile {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  @media (min-width: 769px) {
+    display: none !important;
+  }
+}
+
+/* Simplifier les structures grid complexes */
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Réduire les gaps pour économiser l'espace */
+  .gap-8 {
+    gap: 1rem !important;
+  }
+  
+  .gap-12 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Optimiser les performances de rendu */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Lazy loading optimization */
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Réduire la complexité des pseudo-éléments */
+@media (max-width: 768px) {
+  *::before,
+  *::after {
+    content: none !important;
+  }
+}

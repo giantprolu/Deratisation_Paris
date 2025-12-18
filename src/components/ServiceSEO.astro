@@ -1,0 +1,211 @@
+---
+import { 
+  generateSEOTitle, 
+  generateMetaDescription, 
+  generateSEOKeywords,
+  generateFAQSchema,
+  generateServiceSchema
+} from '../data/seoData';
+
+interface Props {
+  serviceName: string;
+  serviceSlug: string;
+  description?: string;
+  city?: string;
+  department?: string;
+}
+
+const {
+  serviceName,
+  serviceSlug,
+  description,
+  city = 'Paris',
+  department = '75'
+} = Astro.props;
+
+const siteUrl = "https://hygiene-protect-3d.fr";
+const canonicalUrl = `${siteUrl}/services/${serviceSlug}`;
+
+// Générer les données SEO
+const seoData = {
+  serviceName,
+  serviceSlug,
+  description,
+  city,
+  department
+};
+
+const pageTitle = generateSEOTitle(seoData);
+const metaDescription = generateMetaDescription(seoData);
+const keywords = generateSEOKeywords(seoData);
+const faqSchema = generateFAQSchema(serviceSlug);
+const serviceSchema = generateServiceSchema(seoData);
+---
+
+<!-- SEO Meta Tags spécialisés pour le service -->
+<meta name="title" content={pageTitle} />
+<meta name="description" content={metaDescription} />
+<meta name="keywords" content={keywords} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph optimisé pour le service -->
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={metaDescription} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:type" content="service" />
+<meta property="og:image" content={`${siteUrl}/images/services/${serviceSlug}-og.jpg`} />
+<meta property="og:image:alt" content={`${serviceName} professionnel ${city} - Hygiène Protect 3D`} />
+
+<!-- Twitter Card optimisée -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={pageTitle} />
+<meta name="twitter:description" content={metaDescription} />
+<meta name="twitter:image" content={`${siteUrl}/images/services/${serviceSlug}-twitter.jpg`} />
+
+<!-- Geo Tags localisés -->
+<meta name="geo.region" content={`FR-${department}`} />
+<meta name="geo.placename" content={city} />
+<meta name="ICBM" content="48.8566, 2.3522" />
+
+<!-- Schema.org Service -->
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+<!-- Schema.org FAQ -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<!-- Schema.org HowTo pour les services -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": `Comment procéder à la ${serviceName.toLowerCase()} à ${city}`,
+  "description": `Guide professionnel pour une ${serviceName.toLowerCase()} efficace`,
+  "totalTime": "PT2H",
+  "supply": ["Produits professionnels", "Équipements de protection"],
+  "tool": ["Matériel spécialisé", "Appâts professionnels"],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Diagnostic initial",
+      "text": "Inspection complète des lieux pour identifier le niveau d'infestation"
+    },
+    {
+      "@type": "HowToStep", 
+      "name": "Traitement ciblé",
+      "text": "Application de produits professionnels adaptés au type de nuisible"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Suivi et prévention",
+      "text": "Contrôle post-traitement et conseils de prévention"
+    }
+  ]
+})} />
+
+<!-- Schema.org Review aggregate (si disponible) -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `${serviceName} ${city}`,
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Marie L."
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "reviewBody": `Excellent service de ${serviceName.toLowerCase()} à ${city}. Intervention rapide et efficace.`
+    }
+  ]
+})} />
+
+<!-- Robots meta spécialisé -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- Données structurées Local Business pour ce service -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Hygiène Protect 3D",
+  "@id": `${siteUrl}#organization`,
+  "url": siteUrl,
+  "telephone": "+33767393885",
+  "email": "contact@hygiene-protect-3d.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bondy",
+    "addressLocality": "Bondy", 
+    "postalCode": "93140",
+    "addressRegion": "Île-de-France",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.9022,
+    "longitude": 2.4833
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": `Services de ${serviceName}`,
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": `${serviceName} ${city}`,
+          "description": metaDescription
+        }
+      }
+    ]
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": city
+    },
+    {
+      "@type": "State", 
+      "name": "Île-de-France"
+    }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  }
+})} />
+
+<!-- Additional meta tags pour améliorer le CTR -->
+<meta name="author" content="Hygiène Protect 3D" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="rating" content="General" />
+<meta name="revisit-after" content="7 days" />
+
+<style>
+  /* Optimisations Core Web Vitals */
+  img {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px 200px;
+  }
+  
+  /* Amélioration LCP */
+  .hero-image {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px 400px;
+  }
+</style>

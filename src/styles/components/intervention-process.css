@@ -1,0 +1,306 @@
+/* Intervention Process Component Styles */
+
+.intervention-section {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #f8fafc, white);
+}
+
+.intervention-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .intervention-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intervention-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Header */
+.intervention-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.intervention-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ecfdf5;
+  color: #059669;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.intervention-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .intervention-title {
+    font-size: 3rem;
+  }
+}
+
+.intervention-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Timeline */
+.intervention-timeline {
+  position: relative;
+  margin: 3rem 0;
+}
+
+/* Ligne de timeline pour desktop */
+.intervention-timeline-line {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .intervention-timeline-line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(to right, #dbeafe, #3b82f6, #dbeafe);
+    z-index: 1;
+  }
+}
+
+/* Étapes */
+.intervention-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .intervention-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intervention-steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Carte d'étape */
+.intervention-step {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.intervention-step:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Numérotation */
+.intervention-step-number {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Icône */
+.intervention-step-icon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.intervention-step-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #2563eb;
+}
+
+/* Titre */
+.intervention-step-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+/* Description */
+.intervention-step-description {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+/* Durée */
+.intervention-step-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.intervention-step-duration-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* Avantages */
+.intervention-benefits {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, #eff6ff, white);
+  border-radius: 1rem;
+  border: 1px solid #dbeafe;
+}
+
+.intervention-benefits-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2rem;
+}
+
+.intervention-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .intervention-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intervention-benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.intervention-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.intervention-benefit:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.intervention-benefit-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #ecfdf5;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.intervention-benefit-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #059669;
+}
+
+.intervention-benefit-content h4 {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.intervention-benefit-content p {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .intervention-section {
+    padding: 3rem 0;
+  }
+  
+  .intervention-header {
+    margin-bottom: 2rem;
+  }
+  
+  .intervention-title {
+    font-size: 2rem;
+  }
+  
+  .intervention-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .intervention-step {
+    padding: 1.5rem;
+  }
+  
+  .intervention-benefits {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+}

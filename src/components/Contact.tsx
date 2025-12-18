@@ -1,14 +1,13 @@
 import { PhoneCall, Mail, MapPin } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import ProtectedEmail from './ProtectedEmail';
 
 const Contact = () => {
   const [state, handleSubmit] = useForm("mkgqybgb");
   const handlePhoneClick = () => {
     window.location.href = 'tel:0767393885';
   };
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:HYGIENEPROTECT3D@hotmail.com';
-  };
+  
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,16 +134,6 @@ const Contact = () => {
                       <div className="text-sm text-gray-500">Disponible 24h/24 & 7j/7</div>
                     </div>
                   </button>
-                  <button onClick={handleEmailClick} className="flex items-start gap-4 w-full text-left group">
-                    <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center group-hover:bg-primary-dark transition-colors">
-                      <Mail className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">Email</div>
-                      <div className="text-primary-600 hover:text-primary-dark break-all">hygieneprotect3d@hotmail.com</div>
-                      <div className="text-sm text-gray-500">Réponse sous 24h</div>
-                    </div>
-                  </button>
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
                       <MapPin className="h-6 w-6 text-white" />
@@ -158,7 +147,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+              {/* <div className="h-80 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80717.75810027313!2d2.2646344809035113!3d48.858825492060404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e1!3m2!1sfr!2sfr!4v1739204594932!5m2!1sfr!2sfr"
                   width="600"
@@ -167,7 +156,7 @@ const Contact = () => {
                   title="Carte de localisation"
                   className="w-full h-full"
                 ></iframe>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
