@@ -1,0 +1,189 @@
+---
+import { villes } from '../../../data/villesData';
+import { services } from '../../../data/services';
+import Layout from '../../../layouts/Layout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import ContactSidebar from '../../../components/ContactSidebar';
+import FloatingActionButton from '../../../components/FloatingActionButton';
+import InterventionProcess from '../../../components/InterventionProcess.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import ServiceSEO from '../../../components/ServiceSEO.astro';
+import { CheckCircle, MapPin } from 'lucide-react';
+
+export function getStaticPaths() {
+  return villes.flatMap(ville =>
+    services.map(service => ({
+      params: { ville: ville.slug, service: service.slug },
+      props: { ville, service },
+    }))
+  );
+}
+
+const { ville, service } = Astro.props;
+const IconComponent = service.icon;
+const otherServicesSameVille = services.filter(s => s.id !== service.id);
+const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
+---
+
+<Layout
+  title={`${service.title} ${ville.city} | Hygiène Protect 3D`}
+  description={`${service.title} à ${ville.city} - Intervention rapide et certifiée. ${ville.localContext} Devis gratuit ☎ 07 67 39 38 85`}
+  keywords={`${service.title.toLowerCase()} ${ville.city}, ${service.slug} ${ville.city}, nuisibles ${ville.city}, urgence ${service.title.toLowerCase()} ${ville.city}`}
+  canonical={`/villes/${ville.slug}/${service.slug}`}
+>
+  <ServiceSEO
+    serviceName={service.title}
+    serviceSlug={service.slug}
+    description={service.metaDescription}
+    city={ville.city}
+    department={ville.department}
+  />
+
+  <div class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <!-- Hero Section -->
+      <div class="bg-gradient-to-br from-primary-50 to-blue-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs items={[
+            { name: 'Zones d\'intervention', url: '/villes' },
+            { name: ville.city, url: `/villes/${ville.slug}` },
+            { name: service.title, url: `/villes/${ville.slug}/${service.slug}` }
+          ]} />
+
+          <div class="flex items-center mb-4">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+              <IconComponent className="h-8 w-8 text-primary-600" />
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">{service.title} {ville.city}</h1>
+          </div>
+
+          <p class="text-xl text-gray-600 max-w-4xl">{service.description}</p>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            <!-- Left Column -->
+            <div class="lg:col-span-3">
+              <div class="mb-12 flex justify-start">
+                <img
+                  src={service.image}
+                  alt={`${service.imageAlt || service.title} à ${ville.city}`}
+                  title={`${service.imageTitle || service.title} - ${ville.city}`}
+                  class="rounded-2xl shadow-xl w-full max-w-4xl h-auto object-cover"
+                />
+              </div>
+
+              <!-- Contexte local -->
+              <div class="mb-12 bg-blue-50 p-6 rounded-2xl">
+                <div class="flex items-center gap-2 mb-3">
+                  <MapPin className="h-5 w-5 text-primary-600" />
+                  <h3 class="text-xl font-bold text-gray-900">{service.title} à {ville.city} : contexte local</h3>
+                </div>
+                <p class="text-gray-700 leading-relaxed">{ville.localContext}</p>
+                {ville.neighborhoods.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mt-4">
+                    {ville.neighborhoods.map(n => (
+                      <span class="px-3 py-1 bg-white rounded-full text-sm text-gray-700 border border-primary-100">{n}</span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <!-- Description complète -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Notre service de {service.title.toLowerCase()} à {ville.city}
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed whitespace-pre-line text-left">
+                  {service.fullDescription}
+                </p>
+              </div>
+
+              <!-- Caractéristiques -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Ce que nous faisons à {ville.city}
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.features.map((feature) => (
+                    <div class="flex items-start gap-3 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow">
+                      <CheckCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <span class="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Avantages -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Pourquoi nous choisir à {ville.city}
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.benefits.map((benefit) => (
+                    <div class="flex items-start bg-blue-50 p-4 rounded-lg">
+                      <CheckCircle className="h-5 w-5 text-primary-600 mr-3 flex-shrink-0 mt-0.5" />
+                      <span class="text-gray-700">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Autres services dans cette ville -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Nos autres services à {ville.city}
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {otherServicesSameVille.map(other => (
+                    <a
+                      href={`/villes/${ville.slug}/${other.slug}`}
+                      class="flex items-start gap-3 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow"
+                    >
+                      <CheckCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <span class="text-gray-700 text-sm leading-relaxed">{other.title} à {ville.city}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column - Sidebar -->
+            <div class="lg:col-span-1">
+              <div class="sticky top-24 space-y-6">
+                <ContactSidebar client:load />
+
+                <div class="bg-blue-50 p-6 rounded-2xl">
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">{service.title} dans d'autres villes</h3>
+                  <ul class="space-y-2">
+                    {sameServiceOtherVilles.slice(0, 5).map(otherVille => (
+                      <li>
+                        <a
+                          href={`/villes/${otherVille.slug}/${service.slug}`}
+                          class="text-primary-600 hover:text-primary-dark hover:underline transition-colors"
+                        >
+                          {service.title} {otherVille.city}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <InterventionProcess />
+    </main>
+
+    <FloatingActionButton client:load />
+
+    <Footer />
+  </div>
+</Layout>
