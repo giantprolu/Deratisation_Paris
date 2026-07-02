@@ -80,58 +80,17 @@
             </iframe>
           </div>
 
-          <!-- Widget Avis simulés si iframe ne fonctionne pas -->
-          <div class="p-6 space-y-4 bg-gray-50" style="display: none;" id="fallback-reviews">
-            <!-- Avis exemple 1 -->
-            <div class="bg-white rounded-lg p-4 border border-gray-200">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                  M
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="font-semibold text-gray-900">Marie D.</span>
-                    <div class="flex text-yellow-500">★★★★★</div>
-                  </div>
-                  <p class="text-sm text-gray-600 mb-2">Il y a 2 semaines</p>
-                  <p class="text-gray-700">"Service excellent ! Intervention rapide et efficace pour notre problème de rats. Technicien très professionnel et discret. Je recommande vivement !"</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Avis exemple 2 -->
-            <div class="bg-white rounded-lg p-4 border border-gray-200">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
-                  J
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="font-semibold text-gray-900">Jean-Pierre L.</span>
-                    <div class="flex text-yellow-500">★★★★★</div>
-                  </div>
-                  <p class="text-sm text-gray-600 mb-2">Il y a 1 mois</p>
-                  <p class="text-gray-700">"Parfait ! Problème de cafards résolu en une seule intervention. Prix correct et garantie respectée. Merci !"</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Avis exemple 3 -->
-            <div class="bg-white rounded-lg p-4 border border-gray-200">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
-                  S
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center gap-2 mb-1">
-                    <span class="font-semibold text-gray-900">Sophie M.</span>
-                    <div class="flex text-yellow-500">★★★★★</div>
-                  </div>
-                  <p class="text-sm text-gray-600 mb-2">Il y a 3 semaines</p>
-                  <p class="text-gray-700">"Intervention d'urgence un dimanche, service 24h/7j respecté. Très satisfaite du professionnalisme de l'équipe."</p>
-                </div>
-              </div>
-            </div>
+          <!-- Message de secours si l'iframe ne charge pas (aucun faux avis : voir directement sur Google) -->
+          <div class="p-6 bg-gray-50 text-center" style="display: none;" id="fallback-reviews">
+            <p class="text-gray-700 mb-4">Consultez nos avis clients directement sur notre fiche Google.</p>
+            <a
+              href="https://share.google/RCilOvhgl5Db1evBU"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
+            >
+              Voir nos avis sur Google
+            </a>
           </div>
 
           <!-- Pied du widget -->
