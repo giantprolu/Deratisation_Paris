@@ -15,12 +15,17 @@ export interface Service {
   imageAlt?: string;
   imageTitle?: string;
   interventionSteps: { icon: string; title: string; description: string }[];
-  equipments?: { 
-    name: string; 
-    description: string; 
+  equipments?: {
+    name: string;
+    description: string;
     image: string;
     imageAlt?: string;
     imageTitle?: string;
+  }[];
+  gallery?: {
+    src: string;
+    alt: string;
+    title: string;
   }[];
 }
 
@@ -224,6 +229,28 @@ export const services: Service[] = [
         imageAlt: 'Produits insecticides professionnels certifiés pour désinsectisation',
         imageTitle: 'Biocides anti-insectes certifiés - Traitement professionnel Paris'
       }
+    ],
+    gallery: [
+      {
+        src: '/images/punaise1.jpeg',
+        alt: 'Technicien en combinaison de protection intégrale traitant un matelas infesté de punaises de lit par pulvérisation',
+        title: 'Traitement anti-punaises de lit Paris - Technicien certifié en équipement de protection'
+      },
+      {
+        src: '/images/punaise2.jpeg',
+        alt: 'Pulvérisation d\'insecticide professionnel sur un matelas et sommier infestés de punaises de lit',
+        title: 'Désinsectisation punaises de lit Paris - Traitement ciblé matelas et sommier'
+      },
+      {
+        src: '/images/punaise3.jpeg',
+        alt: 'Parquet nettoyé après traitement professionnel contre les punaises de lit',
+        title: 'Après traitement punaises de lit - Logement parisien assaini'
+      },
+      {
+        src: '/images/punaise4.jpeg',
+        alt: 'Véhicule utilitaire chargé de matelas et mobilier emballés pour évacuation après traitement anti-punaises de lit',
+        title: 'Évacuation de mobilier infesté - Intervention punaises de lit Paris'
+      }
     ]
   },
   {
@@ -357,6 +384,28 @@ export const services: Service[] = [
         image: '/images/FiletsdeProtectionAnti-Volatiles.webp',
         imageAlt: 'Filets de protection anti-pigeons pour balcons et façades',
         imageTitle: 'Filets anti-volatiles Paris - Protection invisible et durable'
+      }
+    ],
+    gallery: [
+      {
+        src: '/images/pigeon1.jpeg',
+        alt: 'Zone extérieure fortement encrassée par les fientes et nids de pigeons avant intervention de dépigeonnage à Paris',
+        title: 'Avant dépigeonnage - Zone très infestée par les pigeons à nettoyer'
+      },
+      {
+        src: '/images/pigeon2.jpeg',
+        alt: 'Balcon parisien envahi de fientes de pigeons avec matériel de pose de pics anti-pigeons prêt à l\'installation',
+        title: 'Dépigeonnage Paris - Préparation de la pose de pics anti-pigeons sur balcon souillé'
+      },
+      {
+        src: '/images/pigeon3.jpeg',
+        alt: 'Balcon nettoyé et désinfecté après intervention de dépigeonnage, vue dégagée sur Paris',
+        title: 'Après dépigeonnage - Balcon parisien propre et assaini'
+      },
+      {
+        src: '/images/pigeon4.jpeg',
+        alt: 'Installation de pics anti-pigeons en acier inoxydable sur garde-corps de balcon à Paris',
+        title: 'Pose de pics anti-pigeons - Protection durable de balcon parisien'
       }
     ]
   },
