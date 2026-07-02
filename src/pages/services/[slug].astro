@@ -1,5 +1,6 @@
 ---
 import { services } from '../../data/services';
+import { villes } from '../../data/villesData';
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
@@ -145,6 +146,23 @@ const IconComponent = service.icon;
                   </div>
                 </div>
               )}
+
+              <!-- Zones desservies pour ce service -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Zones desservies pour {service.title.toLowerCase()}
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {villes.map(ville => (
+                    <a
+                      href={`/villes/${ville.slug}/${service.slug}`}
+                      class="flex items-center gap-2 p-4 bg-white border border-primary-100 rounded-lg hover:shadow-md transition-shadow text-gray-700 text-sm"
+                    >
+                      {service.title} {ville.city}
+                    </a>
+                  ))}
+                </div>
+              </div>
 
               <!-- Galerie photos -->
               {service.gallery && service.gallery.length > 0 && (

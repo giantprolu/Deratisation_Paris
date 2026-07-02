@@ -9,7 +9,8 @@ import FloatingActionButton from '../../../components/FloatingActionButton';
 import InterventionProcess from '../../../components/InterventionProcess.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import ServiceSEO from '../../../components/ServiceSEO.astro';
-import { CheckCircle, MapPin } from 'lucide-react';
+import { comboContent } from '../../../data/villeServiceContent';
+import { CheckCircle, MapPin, HelpCircle } from 'lucide-react';
 
 export function getStaticPaths() {
   return villes.flatMap(ville =>
@@ -24,11 +25,29 @@ const { ville, service } = Astro.props;
 const IconComponent = service.icon;
 const otherServicesSameVille = services.filter(s => s.id !== service.id);
 const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
+const combo = comboContent[service.slug][ville.slug];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": combo.faqQuestion,
+      "acceptedAnswer": { "@type": "Answer", "text": combo.faqAnswer }
+    },
+    {
+      "@type": "Question",
+      "name": `Proposez-vous un devis gratuit pour ${service.title.toLowerCase()} à ${ville.city} ?`,
+      "acceptedAnswer": { "@type": "Answer", "text": `Oui, le devis est gratuit et sans engagement. Nous intervenons à ${ville.city} sous 24h en standard, plus rapidement en urgence.` }
+    }
+  ]
+};
 ---
 
 <Layout
   title={`${service.title} ${ville.city} | Hygiène Protect 3D`}
-  description={`${service.title} à ${ville.city} - Intervention rapide et certifiée. ${ville.localContext} Devis gratuit ☎ 07 67 39 38 85`}
+  description={combo.intro.slice(0, 155).trim() + '…'}
   keywords={`${service.title.toLowerCase()} ${ville.city}, ${service.slug} ${ville.city}, nuisibles ${ville.city}, urgence ${service.title.toLowerCase()} ${ville.city}`}
   canonical={`/villes/${ville.slug}/${service.slug}`}
 >
@@ -39,6 +58,7 @@ const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
     city={ville.city}
     department={ville.department}
   />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <div class="min-h-screen flex flex-col">
     <Navbar />
@@ -78,11 +98,21 @@ const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
                 />
               </div>
 
+              <!-- Angle local unique à cette combinaison ville x service -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  {service.title} à {ville.city} : ce qu'il faut savoir
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed text-left">
+                  {combo.intro}
+                </p>
+              </div>
+
               <!-- Contexte local -->
               <div class="mb-12 bg-blue-50 p-6 rounded-2xl">
                 <div class="flex items-center gap-2 mb-3">
                   <MapPin className="h-5 w-5 text-primary-600" />
-                  <h3 class="text-xl font-bold text-gray-900">{service.title} à {ville.city} : contexte local</h3>
+                  <h3 class="text-xl font-bold text-gray-900">Secteurs desservis à {ville.city}</h3>
                 </div>
                 <p class="text-gray-700 leading-relaxed">{ville.localContext}</p>
                 {ville.neighborhoods.length > 0 && (
@@ -92,16 +122,6 @@ const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
                     ))}
                   </div>
                 )}
-              </div>
-
-              <!-- Description complète -->
-              <div class="mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
-                  Notre service de {service.title.toLowerCase()} à {ville.city}
-                </h2>
-                <p class="text-lg text-gray-700 leading-relaxed whitespace-pre-line text-left">
-                  {service.fullDescription}
-                </p>
               </div>
 
               <!-- Caractéristiques -->
@@ -131,6 +151,29 @@ const sameServiceOtherVilles = villes.filter(v => v.id !== ville.id);
                       <span class="text-gray-700">{benefit}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              <!-- FAQ locale -->
+              <div class="mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-left">
+                  Questions fréquentes - {service.title} {ville.city}
+                </h2>
+                <div class="space-y-4">
+                  <div class="bg-white border border-primary-100 rounded-lg p-6">
+                    <div class="flex items-start gap-3 mb-2">
+                      <HelpCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <h3 class="font-bold text-gray-900">{combo.faqQuestion}</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed pl-8">{combo.faqAnswer}</p>
+                  </div>
+                  <div class="bg-white border border-primary-100 rounded-lg p-6">
+                    <div class="flex items-start gap-3 mb-2">
+                      <HelpCircle className="h-5 w-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                      <h3 class="font-bold text-gray-900">Proposez-vous un devis gratuit pour {service.title.toLowerCase()} à {ville.city} ?</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed pl-8">Oui, le devis est gratuit et sans engagement. Nous intervenons à {ville.city} sous 24h en standard, plus rapidement en urgence.</p>
+                  </div>
                 </div>
               </div>
 
