@@ -17,9 +17,11 @@ import { PhoneCall, Mail, MapPin, Leaf } from 'lucide-react';
       </div>
       
       <!-- Liens essentiels -->
-      <div class="flex justify-center gap-6 text-sm">
+      <div class="flex justify-center gap-6 text-sm flex-wrap">
         <a href="/contact" class="text-gray-300 hover:text-primary-light">Contact</a>
         <a href="/services" class="text-gray-300 hover:text-primary-light">Services</a>
+        <a href="/villes" class="text-gray-300 hover:text-primary-light">Zones</a>
+        <a href="/blog" class="text-gray-300 hover:text-primary-light">Blog</a>
         <a href="/mentions-legales" class="text-gray-300 hover:text-primary-light">Mentions</a>
       </div>
       
@@ -33,7 +35,7 @@ import { PhoneCall, Mail, MapPin, Leaf } from 'lucide-react';
   <!-- Desktop: Footer complet -->
   <div class="hidden md:block">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
       <div>
         <div class="flex items-center gap-2 mb-4">
           <h3 class="text-2xl font-bold text-primary-light">Hygiène Protect 3D</h3>
@@ -53,6 +55,7 @@ import { PhoneCall, Mail, MapPin, Leaf } from 'lucide-react';
           <li><a href="/" class="text-gray-300 hover:text-primary-light transition-colors">Accueil</a></li>
           <li><a href="/#about" class="text-gray-300 hover:text-primary-light transition-colors">À Propos</a></li>
           <li><a href="/services" class="text-gray-300 hover:text-primary-light transition-colors">Services</a></li>
+          <li><a href="/blog" class="text-gray-300 hover:text-primary-light transition-colors">Blog</a></li>
           <li><a href="/contact" class="text-gray-300 hover:text-primary-light transition-colors">Contact</a></li>
         </ul>
       </div>
@@ -67,6 +70,18 @@ import { PhoneCall, Mail, MapPin, Leaf } from 'lucide-react';
           <li><a href="/services/hygiene-du-batiment" class="text-gray-300 hover:text-primary-light transition-colors">Hygiène du Bâtiment</a></li>
           <li><a href="/services/debarras-pro" class="text-gray-300 hover:text-primary-light transition-colors">Débarras Pro</a></li>
           <li><a href="/services/assainissement-vmc" class="text-gray-300 hover:text-primary-light transition-colors">Assainissement</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 text-primary-light">Nos Villes</h4>
+        <ul class="space-y-3">
+          <li><a href="/villes/paris" class="text-gray-300 hover:text-primary-light transition-colors">Paris</a></li>
+          <li><a href="/villes/bondy" class="text-gray-300 hover:text-primary-light transition-colors">Bondy</a></li>
+          <li><a href="/villes/montreuil" class="text-gray-300 hover:text-primary-light transition-colors">Montreuil</a></li>
+          <li><a href="/villes/bobigny" class="text-gray-300 hover:text-primary-light transition-colors">Bobigny</a></li>
+          <li><a href="/villes/saint-denis" class="text-gray-300 hover:text-primary-light transition-colors">Saint-Denis</a></li>
+          <li><a href="/villes/aulnay-sous-bois" class="text-gray-300 hover:text-primary-light transition-colors">Aulnay-sous-Bois</a></li>
         </ul>
       </div>
 

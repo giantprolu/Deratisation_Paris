@@ -87,8 +87,30 @@ export default function NavbarMobile() {
                 <span>Services</span>
               </a>
 
-              <a 
-                href="/contact" 
+              <a
+                href="/villes"
+                className="group flex items-center gap-4 text-gray-700 hover:text-primary-600 py-4 px-4 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-blue-50 text-lg font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-orange-600 text-lg">📍</span>
+                </div>
+                <span>Zones d'intervention</span>
+              </a>
+
+              <a
+                href="/blog"
+                className="group flex items-center gap-4 text-gray-700 hover:text-primary-600 py-4 px-4 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-blue-50 text-lg font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                <div className="w-10 h-10 bg-gradient-to-br from-sky-100 to-blue-100 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-sky-600 text-lg">📝</span>
+                </div>
+                <span>Blog</span>
+              </a>
+
+              <a
+                href="/contact"
                 className="group flex items-center gap-4 text-gray-700 hover:text-primary-600 py-4 px-4 rounded-2xl transition-all duration-300 hover:bg-gradient-to-r hover:from-primary-50 hover:to-blue-50 text-lg font-medium"
                 onClick={() => setIsOpen(false)}
               >

@@ -1,0 +1,58 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingActionButton from '../../components/FloatingActionButton';
+import { villes } from '../../data/villesData';
+import { MapPin, ArrowRight } from 'lucide-react';
+---
+
+<Layout
+  title="Zones d'Intervention - Dératisation Paris & Île-de-France"
+  description="Hygiène Protect 3D intervient à Paris, Bondy, Montreuil, Bobigny, Saint-Denis et Aulnay-sous-Bois. Dératisation, désinsectisation et désinfection. Devis gratuit."
+  canonical="/villes"
+  keywords="dératisation Paris, dératisation Bondy, dératisation Montreuil, dératisation Bobigny, dératisation Saint-Denis, dératisation Aulnay-sous-Bois"
+>
+  <div class="min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-grow">
+      <div class="bg-gradient-to-br from-primary-50 to-blue-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Nos Zones d'Intervention</h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Nous intervenons à Paris et dans toute l'Île-de-France. Retrouvez les détails de notre service dans votre ville.
+          </p>
+        </div>
+      </div>
+
+      <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {villes.map(ville => (
+              <a
+                href={`/villes/${ville.slug}`}
+                class="group bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-primary-200 hover:-translate-y-2 block"
+              >
+                <div class="w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary-100 group-hover:scale-110 transition-all duration-300">
+                  <MapPin className="w-7 h-7 text-primary-600" />
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                  {ville.title}
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">{ville.description.substring(0, 110)}...</p>
+                <div class="flex items-center text-primary-600 font-medium">
+                  <span>Voir la page {ville.city}</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <FloatingActionButton client:load />
+
+    <Footer />
+  </div>
+</Layout>
