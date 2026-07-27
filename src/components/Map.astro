@@ -10,6 +10,7 @@ const { id = 'map' } = Astro.props;
 <div id={id} style="height: 100%; width: 100%; min-height: 400px;"></div>
 
 <!-- Chargement de Leaflet via CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
 <script src="/js/map-client.js" is:inline></script>
 
